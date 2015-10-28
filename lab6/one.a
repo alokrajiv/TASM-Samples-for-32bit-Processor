@@ -1,5 +1,5 @@
 .data
-	original: .word 1,2,3,4
+	original: .word 1, 2, 3, 4
 	reverse:	.space 16
 	space: .asciiz " "
 .text
