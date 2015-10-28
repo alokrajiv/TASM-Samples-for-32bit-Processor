@@ -1,4 +1,4 @@
-#print "HELLO WORLD!"
+#String output.
 		.data
 out_str:.asciiz "\nHELLO WORLD!\n"
 		.text

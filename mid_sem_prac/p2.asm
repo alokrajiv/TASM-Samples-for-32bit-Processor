@@ -1,7 +1,8 @@
+#String input and the output after removing newline.
 		.data
 out_str1:.asciiz "Please enter your name (max 30 chars) :\n"
 out_str2:.asciiz "\nHello "
-out_str3:.asciiz ", how are you doing?\n"
+out_str3:.asciiz ", how are you doing today?\n"
 buffer: .space 30
 
 		.text
