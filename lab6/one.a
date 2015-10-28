@@ -1,0 +1,42 @@
+.data
+	original: .word 1,2,3,4
+	reverse:	.space 16
+	space: .asciiz " "
+.text
+.globl main
+main:
+	li $t0,4
+	la $s0,original
+	la $s1,reverse
+
+L1:	lw $t1,($s0)
+	sub $sp,$sp,4
+	sw $t1,($sp)
+	sub $t0,$t0,1
+	addi $s0,$s0,4
+	bgt $t0,0,L1
+	
+  	li $t2,4
+L2:	lw $t3,($sp)
+	addi $sp,$sp,4
+	sw $t3,($s1)
+	sub $t2,$t2,1
+	addi $s1,$s1,4
+	bgt $t2,0,L2
+
+	li $t4,4
+	la $s2,reverse
+L3:	lw $t5,($s2)
+	li $v0,1
+	move $a0,$t5
+	syscall
+	li $v0,4
+	la $a0,space
+	syscall
+	addi $s2,$s2,4
+	sub $t4,$t4,1
+	bgt $t4,0,L3	
+
+li $v0,10
+syscall
+	

@@ -1,0 +1,10 @@
+.data
+myArray:
+	.space 160
+.text
+main:
+	li $t6,1
+	li $t7,1
+	sw $t6, myArray($0)
+	sw $t6, myArray($t7)
+	jr $ra
